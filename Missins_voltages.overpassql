@@ -1,10 +1,6 @@
 [out:json][timeout:400];
 
-// Select country or state/province nodes inside the bounding box
-node["place"~"country|state|province"]({{bbox}}) -> .places;
-
-// Find administrative boundaries that match the selected admin level
-relation["boundary"="administrative"]["admin_level"="2"](bn.places) -> .admin_boundary;
+relation["boundary"="administrative"]["name"~"Bolivia"] -> .admin_boundary;
 
 // Map the relation to an area
 .admin_boundary map_to_area -> .searchArea;
