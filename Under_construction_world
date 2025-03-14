@@ -1,0 +1,12 @@
+[out:json][timeout:400];
+
+// Find power-related infrastructure under construction
+(
+  node["power"]["construction"="yes"];
+  way["power"]["construction"="yes"];
+  relation["power"]["construction"="yes"];
+);
+
+out body;
+>;
+out skel qt;
